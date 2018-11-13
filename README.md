@@ -18,10 +18,11 @@ hash 키 생성은 구글 개발자 사이트의 내용을 따르면 되나, has
 <pre><code>
 keytool -exportcert -alias testKey -keystore testSigningKey | xxd -p | tr -d "[:space:]" | echo -n com.clipandbooks.sample.smsretriever `cat` | shasum -a 256 | tr -d "[:space:]-" | xxd -r -p | base64 | cut -c1-11
 </code></pre>
-* 가이드에 있는 sha256sum 대신 shasum -a 256 으로 대체해서 사용했다는 점만 다릅니다.
+가이드에 있는 sha256sum 대신 shasum -a 256 으로 대체해서 사용했다는 점만 다릅니다.
 
 ## 2. SMS 메시지 생성
-인증된(?) SMS의 형식은 다음의 규칙을 따라야 합니다. [참고 : 1.Construct a verification message](https://developers.google.com/identity/sms-retriever/verify)
+인증된(?) SMS의 형식은 다음의 규칙을 따라야 합니다.
+[참고 : 1.Construct a verification message(https://developers.google.com/identity/sms-retriever/verify)](https://developers.google.com/identity/sms-retriever/verify)
 
 * Be no longer than 140 bytes
 * Begin with the prefix <#>
@@ -32,6 +33,7 @@ keytool -exportcert -alias testKey -keystore testSigningKey | xxd -p | tr -d "[:
 <pre><code><#> Test Auth Message 1234 XGw4Kt/c2qe </code></pre>
 
 맨 마지막에 있는 값이 사이닝 hash 키입니다.
+메시지 중간에 있는 "1234"는 인증메시지 예시 입니다. 
 
 ## 3. 테스트
 사이닝키로 빌드된 앱을 설치 후 "START" 버튼을 누릅니다.
