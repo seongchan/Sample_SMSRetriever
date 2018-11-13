@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SMS Retriever</string>
+    <string name="description">SMS Retriever Sample</string>
+    <string name="button">Start Retriever</string>
+</resources>
