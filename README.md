@@ -3,8 +3,8 @@ Sample_SMSRetriever
 Android SMS Retriever 샘플코드 입니다.
 
 이 코드는 구글개발자 사이트에서 제공하는 기본 코드를 그대로! 사용하였고,
-동작을 위한 몇가지 코드만 추가하였습니다.
-자세한 내용은 아래의 사이트를 참고바랍니다.
+동작을 위한 몇가지 코드만 추가하였습니다.<br>
+자세한 내용은 아래의 사이트를 참고바랍니다.<br>
 [구글개발자 사이트:SMS Retriever API (https://developers.google.com/identity/sms-retriever/)](https://developers.google.com/identity/sms-retriever/)
 
 위 사이트에서 안드로이드 구현 코드와 SMS 메시지 형식에 대한 내용을 참고하기 바랍니다.
