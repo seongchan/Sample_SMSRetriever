@@ -57,4 +57,4 @@ keytool -exportcert -alias testKey -keystore testSigningKey | xxd -p | tr -d "[:
 
 ## 6. 라이센스
 여기 있는 코드는 원래 참조했던 내용을 제외하고, 제가 작성한 부분에 대해서는 퍼블릭 도메인입니다.
-[라이센스보기](Sample_SMSRetriever/LICENSE)
+[라이센스보기](LICENSE)
