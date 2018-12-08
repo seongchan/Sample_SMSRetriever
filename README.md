@@ -14,7 +14,7 @@ Android SMS Retriever 샘플코드 입니다.
 이에 먼저 사이닝 키를 생성을 합니다.<br>
 생성된 사이닝 키를 이용하여 다음과 같이 11자리의 hash키를 생성합니다.<br>
 hash 키 생성은 구글 개발자 사이트의 내용을 따르면 되나, hash 키를 생성할때에 sha256sum 명령이 제공되지 않아 파이프 오류가 날 수 있습니다.<br>
-저의 경우(macOS는 다음의 명령을 이용하였습니다.
+저의 경우(macOS)는 다음의 명령을 이용하였습니다.
 
 <pre><code>
 keytool -exportcert -alias testKey -keystore testSigningKey | xxd -p | tr -d "[:space:]" | echo -n com.clipandbooks.sample.smsretriever `cat` | shasum -a 256 | tr -d "[:space:]-" | xxd -r -p | base64 | cut -c1-11
