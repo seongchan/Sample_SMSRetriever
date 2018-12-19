@@ -9,6 +9,11 @@ Android SMS Retriever 샘플코드 입니다.
 
 위 사이트에서 안드로이드 구현 코드와 SMS 메시지 형식에 대한 내용을 참고하기 바랍니다.
 
+**2018년 12월 19일**<br>
+SMS 인증문자 형식 관련해서 다음의 내용도 참고하기 바랍니다.<br>
+[https://developers-kr.googleblog.com/2017/11/effective-phone-number-verification.html](https://developers-kr.googleblog.com/2017/11/effective-phone-number-verification.html)
+
+
 ## 1. 사이닝 hash 키
 인증된 SMS를 주고 받기 위해서는 사이닝 hash 키가 필요합니다.<br>
 이에 먼저 사이닝 키를 생성을 합니다.<br>
@@ -57,6 +62,7 @@ keytool -exportcert -alias testKey -keystore testSigningKey | xxd -p | tr -d "[:
 여기에 소개된 내용은 SMS 수신에 대한 권한이 제한됨에 따라서 앱에 허용된 메시지만 수신하기 위해서 쓰이는 방법입니다.<br>
 (본인인증 자체에 대한 방법은 아님)<br>
 외부 기관에 본인인증 메시지 발송요청 시에 구글이 정한 형식에 맞춰서 (<#>로 시작하고 메시지 뒤에 hash 키 포함) 발송이 가능하다면 가능할 수 있습니다.<br>
+
 
 ## 6. 라이센스
 여기 있는 코드는 원래 참조했던 내용을 제외하고, 제가 작성한 부분에 대해서는 퍼블릭 도메인입니다.<br>
