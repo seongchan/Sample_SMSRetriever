@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion '28.0.2'
+    defaultConfig {
+        applicationId "com.clipandbooks.sample.smsretriever"
+        minSdkVersion 16
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        releaseWithSignedKey {
+            storeFile file(keystore)
+            keyAlias key_alias
+            keyPassword keystore_pass
+            storePassword key_pass
+        }
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.releaseWithSignedKey
+        }
+
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.releaseWithSignedKey
+        }
+    }
+}
+
+ext {
+    playServicesVersion = '11.8.0'
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.google.android.gms:play-services-auth-api-phone:$playServicesVersion"
+}
